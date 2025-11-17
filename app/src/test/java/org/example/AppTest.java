@@ -4,11 +4,21 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    }
+
+    @Test void cleanerWorks() {
+        ArrayList<Integer> list = new ArrayList<>(List.of(1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9));
+        System.out.println(list.toString());
+        System.out.println("Cleaned List: " + Cleaner.clean(list));
     }
 }

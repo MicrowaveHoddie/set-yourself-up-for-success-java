@@ -3,12 +3,30 @@
  */
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
     public String getGreeting() {
-        return "Hello World!";
+        return "Hello and welcome to the list duplicate cleaner!";
     }
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+
+        ArrayList<Integer> ints = new ArrayList<>(List.of(1, 2, 2, 3, 4, 4, 5));
+        System.out.println("Original Integers: " + ints);
+        System.out.println("Cleaned Integers:  " + Cleaner.clean(ints));
+        System.out.println();
+
+        ArrayList<String> strings = new ArrayList<>(List.of("apple", "banana", "apple", "kiwi", "banana"));
+        System.out.println("Original Strings:  " + strings);
+        System.out.println("Cleaned Strings:   " + Cleaner.clean(strings));
+        System.out.println();
+
+        ArrayList<Double> doubles = new ArrayList<>(List.of(1.1, 2.2, 2.2, 3.3, 1.1));
+        System.out.println("Original Doubles:  " + doubles);
+        System.out.println("Cleaned Doubles:   " + Cleaner.clean(doubles));
+        System.out.println();
     }
 }
